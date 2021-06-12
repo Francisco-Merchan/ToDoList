@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./bgimage.jpg);
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  border: solid 1px rgba(255, 255, 255, 05);
+  border-radius: 5px;
+  height: 600px;
+}
+
+.list-group {
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  border: solid 1px rgba(255, 255, 255, 05);
+  border-radius: 5px;
+}
