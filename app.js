@@ -1,6 +1,7 @@
 const form = document.querySelector(".form");
 const inputForm = document.querySelector("input");
 const listaTareas = document.querySelector("#lista_tareas");
+const button = document.querySelector(".btn-info");
 let tareas = [];
 
 form.addEventListener("submit", (e) => {
@@ -94,6 +95,10 @@ listaTareas.addEventListener("click", (e) => {
     const id = e.target.parentElement.parentElement.id;
     cambiarStatus(id);
   }
+  if (e.target.classList.contains("bi-pencil-fill")) {
+    const id = e.target.parentElement.parentElement.id;
+    editarStorage(id);
+  }
 });
 
 function borrarStorage(id) {
@@ -111,4 +116,11 @@ function cambiarStatus(id) {
   }
   localStorage.setItem("tareas", JSON.stringify(tareas));
   mostrarEnDOM();
+}
+
+function editarStorage(id) {
+  const elemento = tareas.find((tarea) => tarea.id == id);
+  console.log(elemento);
+  inputForm.value = elemento.tarea;
+  button.value = "EDITAR";
 }
